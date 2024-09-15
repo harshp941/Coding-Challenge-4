@@ -11,11 +11,21 @@ console.log(inventory);
 // Task 2 Create a Function to Display Product Details
 function displayProductDetails(product) {
 const status = product.quanitiy <= product.lowStockLevel ? "Low Stock" : "In Stock";
-return ` The ${product.name}'s price is $${product.price} and there are ${product.quanitiy} left so it is ${status} but the low level stock is ${product.lowStockLevel}`
+return ` The ${product.name}'s price is $${product.price} and they are ${status}`
 }
 console.log(displayProductDetails(inventory[0]));
+console.log(displayProductDetails(inventory[1]));
+console.log(displayProductDetails(inventory[2]));
+console.log(displayProductDetails(inventory[3]));
+console.log(displayProductDetails(inventory[4]));
 
-
+// Task 3 Create a Function to Update Product Stock After Sales
+function updateStock(product, unitsSold) {
+    let newStock = product.quantity -= unitsSold
+    return `${product.name} quantity after sales is ${newStock}`
+}
+console.log(updateStock(inventory[0], 10));
+   
 
 
 
