@@ -8,3 +8,18 @@ let inventory = [
 ];
 console.log(inventory);
 
+// Task 2 Create a Function to Display Product Details
+function displayProductDetails(product) {
+const status = product.quanitiy <= product.lowStockLevel ? "Low Stock" : "In Stock";
+return ` The ${product.name}'s price is $${product.price} and there are ${product.quanitiy} left so it is ${status} but the low level stock is ${product.lowStockLevel}`
+}
+console.log(displayProductDetails(inventory[0]));
+
+
+
+
+
+
+
+
+    
