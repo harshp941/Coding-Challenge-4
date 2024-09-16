@@ -10,8 +10,8 @@ console.log(inventory);
 
 // Task 2 Create a Function to Display Product Details
 function displayProductDetails(product) {
-const status = product.quantity <= product.lowStockLevel ? "Low Stock" : "In Stock";
-return ` The ${product.name}'s price is $${product.price} and they are ${status}`
+const status = product.quantity <= product.lowStockLevel ? "Low Stock" : "In Stock";  
+return ` The ${product.name}'s price is $${product.price} and they are ${status}`// I was just being creative but the function works
 }
 console.log(displayProductDetails(inventory[0]));
 console.log(displayProductDetails(inventory[1]));
@@ -37,13 +37,22 @@ console.log(checkLowStock(inventory));
 
 // Task 5 Create a Function to Calculate Total Inventory Value
 function calculateInventoryValue() {
-     return inventory.reduce((totalValue, inventory) => {
-        return totalValue + (inventory.price * inventory.quantity)},0);
+     return inventory.reduce((totalValue, product) => {
+        return totalValue + (product.price * product.quantity)},0);
 };
 const inventoryTotalValue = calculateInventoryValue(inventory);
 console.log(`The total inventory value is $${inventoryTotalValue}`);
  
-
+// Task 6 Create a Function to Process a Sale
+function processSale (product,unitsSold)
+{var sale = inventory.find(({name}) => name===product)
+if (inventory.includes(product)){
+    return `Product Not Found In Inventory`;
+} else {
+    return updateStock(sale,unitsSold)
+}   
+}
+console.log(processSale("Keyboard",6));
 
     
 
